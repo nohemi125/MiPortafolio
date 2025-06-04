@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Nohemi - Portafolio</title>
+</head>s
+<body>
+    <header>
+        <div class="icono">
+            <img src="./imagens/iconomio.png" alt="icono">
+            <h1>Mi Portafolio</h1>
+        </div>
+
+        <button class="hamburger" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        
+        <nav class="navbar" id="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="principal" id="home">  
+        <div class="container">
+            <div class="textos">
+                <p id="texto-escritura">
+                    <span class="texto-uno">Hello World!</span> 
+                    <span class="texto-dos">I am Nohemi</span>   
+                </p>
+                <h3>Software Development</h3>
+            </div> 
+
+            <div class="CV">
+                <a href="./imagens/cv-nohemi.pdf" download class="download-cv" >
+                    <span class="btn-text">Download CV</span>
+                    <i class="fas fa-download btn-icon"></i>
+                </a>        
+            </div>
+        </div>
+
+        <div class="avatar-wrapper">
+            <div class="blob-bg">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#C77DFF" d="M50.1,-45C58.6,-29.4,54.6,-8.9,49.5,10.6C44.5,30.1,38.4,48.6,24.3,58.6C10.1,68.5,-12.1,69.8,-32.8,62.1C-53.5,54.4,-72.7,37.7,-74.9,19.6C-77.1,1.4,-62.2,-18.2,-46.9,-35.3C-31.5,-52.5,-15.8,-67.3,2.5,-69.3C20.8,-71.4,41.7,-60.6,50.1,-45Z" transform="translate(100 100)" />
+                </svg>
+            </div>
+
+            <div class="avatar-container" id="avatar">
+                <img src="./imagens/-saludando-me.gif" alt="Mi Avatar saludando">
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">  
+        <div class="about-info">
+            <div class="about-img">
+                <img src="./imagens/yo.jpg" alt="foto mia">
+            </div>
+            <div class="about-text">
+                <h3>About Me</h3>
+                <p>I am a sixth-semester Software Development Technology student, 
+                passionate about technology and focusing on interface design and user experience.
+                I consider myself a creative person with knowledge of drawing, especially hyperrealism
+                techniques. I have the ability to learn new technologies and have experience in academic
+                projects involving design, development, and technological sustainability. I value teamwork 
+                and effective communication.</p>
+            </div>
+        </div>
+        
+        <div class="tools-section">
+            <div class="tools-content">
+                <h2>Tools & Technologies</h2>
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <img src="./imagens/figma.png" alt="Figma" title="Figma">
+                        <img src="./imagens/html.png" alt="HTML" title="HTML">
+                        <img src="./imagens/JS.png" alt="JavaScript" title="JavaScript">
+                        <img src="./imagens/git.png" alt="Git" title="Git">
+                        <img src="./imagens/react.png" alt="React" title="React">
+                        <img src="./imagens/mongo.png" alt="MongoDB" title="MongoDB">
+                        <img src="./imagens/mysql.png" alt="MySQL" title="MySQL">
+                        <img src="./imagens/node-js.png" alt="Node.js" title="Node.js">
+                        <img src="./imagens/excel.png" alt="Excel" title="Excel">
+                        <img src="./imagens/express.png" alt="Express" title="Express">
+                        <img src="./imagens/css.png" alt="CSS" title="CSS">
+                        <img src="./imagens/java.png" alt="Java" title="Java">
+                        <img src="./imagens/bootstrap.png" alt="Bootstrap" title="Bootstrap">
+                        <img src="./imagens/github.png" alt="GitHub" title="GitHub">
+                        <img src="./imagens/firebase.png" alt="Firebase" title="Firebase">
+                        <img src="./imagens/chatgpt.png" alt="ChatGPT" title="ChatGPT">
+                         <img src="./imagens/figma.png" alt="Figma" title="Figma">
+                        <img src="./imagens/html.png" alt="HTML" title="HTML">
+                        <img src="./imagens/JS.png" alt="JavaScript" title="JavaScript">
+                        <img src="./imagens/git.png" alt="Git" title="Git">
+                        <img src="./imagens/react.png" alt="React" title="React">
+                        <img src="./imagens/mongo.png" alt="MongoDB" title="MongoDB">
+                        <img src="./imagens/mysql.png" alt="MySQL" title="MySQL">
+                        <img src="./imagens/node-js.png" alt="Node.js" title="Node.js">
+                        <img src="./imagens/excel.png" alt="Excel" title="Excel">
+                        <img src="./imagens/express.png" alt="Express" title="Express">
+                        <img src="./imagens/css.png" alt="CSS" title="CSS">
+                        <img src="./imagens/java.png" alt="Java" title="Java">
+                        <img src="./imagens/bootstrap.png" alt="Bootstrap" title="Bootstrap">
+                        <img src="./imagens/github.png" alt="GitHub" title="GitHub">
+                        <img src="./imagens/firebase.png" alt="Firebase" title="Firebase">
+                        <img src="./imagens/chatgpt.png" alt="ChatGPT" title="ChatGPT">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-proyectos" id="projects">
+        <div class="projects-content">
+            <h2 class="projects-title">My Projects</h2>
+            <div class="proyectos-grid">
+                <div class="card portal">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-graduation-cap fa-2x"></i>
+                    </div>
+                    <h3>Academic Portal</h3>
+                    <p>A comprehensive academic management system built with modern web technologies. Features include student registration, course management, and grade tracking.</p>
+                    <div class="card-buttons">
+                        <button class="btn-vermas" onclick="openModal('portal')">Ver más</button>
+                        <a href="landing-pag.html" class="btn-demo">Demo</a>
+                    </div>
+                </div>
+
+                <div class="card editor">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-spell-check fa-2x"></i>
+                    </div>
+                    <h3>Text Editor</h3>
+                    <p>A feature-rich text editor with real-time collaboration, syntax highlighting, and multiple export formats. Built with vanilla JavaScript.</p>
+                    <div class="card-buttons">
+                        <button class="btn-vermas" onclick="openModal('editor')">Ver más</button>
+                        <a href="landing-pag.html" class="btn-demo">Demo</a>
+                    </div>
+                </div>
+
+                <div class="card music">
+                    <div class="card-icon">
+                        <i class="fas fa-music fa-2x"></i>
+                    </div>
+                    <h3>Music Player</h3>
+                    <p>An elegant music player with playlist management, equalizer, and responsive design. Supports multiple audio formats and streaming.</p>
+                    <div class="card-buttons">
+                        <button class="btn-vermas" onclick="openModal('music')">Ver más</button>
+                        <a href="landing-pag.html" class="btn-demo">Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  <section class="cursos" id="courses">
+        <div class="courses-content">
+            <h2 class="courses-title">Courses & Certifications</h2>
+            <p class="courses-subtitle">Continuous learning and professional development</p>
+            
+            <div class="courses-grid">
+                <div class="course-card" data-course="javascript">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fab fa-js-square fa-2x"></i>
+                        </div>
+                        <div class="course-badge">Completed</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>JavaScript</h3>
+                        <p class="course-provider">FreeCodeCamp</p>
+                        <p class="course-description">async programming, and modern JavaScript concepts.</p>
+                        <div class="course-skills">
+                            <!-- <span class="skill-tag">ES6+</span> -->
+                            <span class="skill-tag">DOM</span>
+                            <!-- <span class="skill-tag">Async/Await</span> -->
+                            <span class="skill-tag">APIs</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-date">2024</span>
+                            <button class="view-certificate" onclick="openCertificateModal('javascript')">
+                                <i class="fas fa-certificate"></i>
+                                View Certificate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-course="react">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fab fa-react fa-2x"></i>
+                        </div>
+                        <div class="course-badge">Completed</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>React Development</h3>
+                        <p class="course-provider">Udemy</p>
+                        <p class="course-description">Advanced React concepts including hooks, context API, state management, and component optimization.</p>
+                        <div class="course-skills">
+                            <span class="skill-tag">React Hooks</span>
+                            <span class="skill-tag">Context API</span>
+                            <span class="skill-tag">Redux</span>
+                            <span class="skill-tag">Testing</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-date">2024</span>
+                            <button class="view-certificate" onclick="openCertificateModal('react')">
+                                <i class="fas fa-certificate"></i>
+                                View Certificate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-course="database">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fas fa-database fa-2x"></i>
+                        </div>
+                        <div class="course-badge">Completed</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Database SQL</h3>
+                        <p class="course-provider">Coursera</p>
+                        <p class="course-description">Database fundamentals, SQL queries, normalization.</p>
+                        <div class="course-skills">
+                            <span class="skill-tag">MySQL</span>
+                            <!-- <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">SQL Queries</span>
+                            <span class="skill-tag">Design</span> -->
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-date">2023</span>
+                            <button class="view-certificate" onclick="openCertificateModal('database')">
+                                <i class="fas fa-certificate"></i>
+                                View Certificate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-course="uiux">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fab fa-figma fa-2x"></i>
+                        </div>
+                        <div class="course-badge">Completed</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>FIGMA</h3>
+                        <p class="course-provider">DesafioLatam</p>
+                        <!-- <p class="course-description">User interface design, user experience research, prototyping, and design thinking methodologies.</p> -->
+                        <div class="course-skills">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Prototyping</span>
+    
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-date">2025</span>
+                            <button class="view-certificate" onclick="openCertificateModal('Figma')">
+                                <i class="fas fa-certificate"></i>
+                                View Certificate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-course="nodejs">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fab fa-node-js fa-2x"></i>
+                        </div>
+                        <div class="course-badge">Completed</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Node.js & Express</h3>
+                        <p class="course-provider">Platzi</p>
+                        <p class="course-description">Backend development with Node.js, Express framework.</p>
+                        <div class="course-skills">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">Authentication</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-date">2025</span>
+                            <button class="view-certificate" onclick="openCertificateModal('nodejs')">
+                                <i class="fas fa-certificate"></i>
+                                View Certificate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-course="git">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fab fa-git-alt fa-2x"></i>
+                        </div>
+                        <div class="course-badge">Completed</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Git & GitHub </h3>
+                        <p class="course-provider">GitHub</p>
+                        <p class="course-description">Version control, collaborative development and project management with Git.</p>
+                        <div class="course-skills">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">Branching</span>
+                            <span class="skill-tag">Collaboration</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-date">2025</span>
+                            <button class="view-certificate" onclick="openCertificateModal('git')">
+                                <i class="fas fa-certificate"></i>
+                                View Certificate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="courses-stats">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Courses Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">120+</div>
+                    <div class="stat-label">Hours of Learning</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2024</div>
+                    <div class="stat-label">Latest Achievement</div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <section class="contacto" id="contact">
+        <div class="contact-content">
+            <h2>Get In Touch</h2>
+            <p>I'm always open to discussing new opportunities and interesting projects.</p>
+            
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                       
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>nohemy_morelo69222@elpoli.edu.co</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+57 3003658519</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Apartadó - Antioquia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="redes-sociales">
+                <a href="https://wa.me/57300658519?text=¡Hola,+vi+tu+portafolio!" class="social-link">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="https://www.linkedin.com/in/nohemy-morelo-rivas-8728a2324/" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/nohemi125" class="social-link">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para proyectos -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody">
+                <!-- Contenido dinámico del modal -->
+            </div>
+        </div>
+    </div>
+
+
+  <!-- Modal para certificados -->
+    <div id="certificateModal" class="modal certificate-modal">
+        <div class="modal-content certificate-modal-content">
+            <div class="certificate-modal-header">
+                <h3 id="certificateTitle">Certificate</h3>
+                <span class="close certificate-close">&times;</span>
+            </div>
+            <div class="certificate-modal-body">
+                <div class="certificate-image-container">
+                    <img id="certificateImage" src="/placeholder.svg" alt="Certificate">
+                    <div class="certificate-loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Loading certificate...</p>
+                    </div>
+                </div>
+                <div class="certificate-info">
+                    <div class="certificate-details">
+                        <h4 id="certificateCourseName"></h4>
+                        <p id="certificateProvider"></p>
+                        <p id="certificateDate"></p>
+                    </div>
+                    <div class="certificate-actions">
+                        <button class="btn-download" onclick="downloadCertificate()">
+                            <i class="fas fa-download"></i>
+                            Download Certificate
+                        </button>
+                        <!-- <button class="btn-share" onclick="shareCertificate()">
+                            <i class="fas fa-share-alt"></i>
+                            Share
+                        </button> -->
+                        <!-- <button class="btn-verify" onclick="verifyCertificate()">
+                            <i class="fas fa-shield-alt"></i>
+                            Verify Authenticity
+                        </button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Nohemi. All rights reserved.</p>
+            <p>Made with ❤️ and lots of 😭</p>
+        </div>
+    </footer>
+
+    <script src="./JS/scrit.js"></script>
+</body>
+</html>
