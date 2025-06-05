@@ -1769,6 +1769,7 @@ footer {
 
   .carousel-track {
     gap: 1rem;
+    animation: scroll 15s linear infinite; 
   }
 
   .carousel-track img {
