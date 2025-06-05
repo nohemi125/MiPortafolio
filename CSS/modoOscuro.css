@@ -1,0 +1,71 @@
+/* --- Modo Oscuro --- */
+body.dark-mode {
+  background: #181824;
+  color: #f3f3f3;
+}
+
+body.dark-mode header {
+  background: rgba(40, 20, 60, 0.98);
+}
+
+body.dark-mode .navbar {
+  background: #23233a;
+}
+
+body.dark-mode .navbar a {
+  color: #a2d2ff;
+}
+
+body.dark-mode .navbar a:hover {
+  color: #c77dff;
+}
+
+body.dark-mode .hamburger {
+  background: #23233a;
+}
+
+body.dark-mode .hamburger i {
+  color: #a2d2ff;
+}
+
+body.dark-mode .card,
+body.dark-mode .course-card {
+  background: #23233a;
+  color: #f3f3f3;
+  border-color: #c77dff;
+}
+
+body.dark-mode .modal-content {
+  background: #23233a;
+  color: #f3f3f3;
+}
+
+body.dark-mode .download-cv,
+body.dark-mode .btn-submit,
+body.dark-mode .btn-vermas,
+body.dark-mode .btn-demo {
+  background: linear-gradient(135deg, #35007a, #23233a);
+  color: #a2d2ff;
+}
+
+body.dark-mode .download-cv:hover,
+body.dark-mode .btn-submit:hover,
+body.dark-mode .btn-vermas:hover,
+body.dark-mode .btn-demo:hover {
+  background: linear-gradient(135deg, #c77dff, #35007a);
+  color: #fff;
+}
+
+body.dark-mode .about-img img,
+body.dark-mode .avatar-container img {
+  box-shadow: 0 4px 24px rgba(80, 80, 120, 0.4);
+}
+
+body.dark-mode .tools-section,
+body.dark-mode .contact-content,
+body.dark-mode .footer-content {
+  background: #181824;
+  color: #f3f3f3;
+}
+
+/* Ajusta más elementos según tu diseño */
