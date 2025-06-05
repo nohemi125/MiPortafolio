@@ -54,9 +54,9 @@ const certificatesData = {
   javascript: {
     title: "JavaScript Fundamentals Certification",
     courseName: "JavaScript Fundamentals",
-    provider: "FreeCodeCamp",
-    date: "Completed: March 2024",
-    image: "/placeholder.svg?height=600&width=800&text=JavaScript+Certificate",
+    provider: "WomakersCode",
+    date: "Completed: June 2025",
+    image: "./imagens/certificadoJS.jpg",
     downloadUrl: "#",
     verificationUrl: "/landing-page.html",
     description:

@@ -479,7 +479,7 @@ header {
 .carousel-track {
   display: flex;
   gap: 2rem;
-  animation: scroll 15s linear infinite;
+  animation: scroll 30s linear infinite;
   width: max-content;
 }
 
@@ -972,6 +972,20 @@ header {
 
 [data-theme="dark"] .form-group label {
   color: var(--text-secondary);
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-blanco);
+  font-size: 1rem;
+  transition: var(--transition);
+  height: 120px; /* Altura fija para asegurar que se vea completo */
+  min-height: 120px;
+  resize: vertical;
 }
 
 .form-group input,
@@ -1710,7 +1724,29 @@ footer {
   .contact-form {
     width: 100%;
     max-width: 100%;
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  /* Reducir el margen inferior de los grupos de formulario */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  /* Ajustar la altura del textarea en móviles */
+  .form-group textarea {
+    height: 100px;
+  }
+
+  /* Ajustar el padding del botón de envío */
+  .btn-submit {
+    padding: 0.8rem 1rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Asegurar que la sección de contacto tenga suficiente altura */
+  .contacto {
+    min-height: auto;
+    padding-bottom: 6rem;
   }
 
   .form-group {
@@ -1769,7 +1805,6 @@ footer {
 
   .carousel-track {
     gap: 1rem;
-    animation: scroll 15s linear infinite; 
   }
 
   .carousel-track img {
@@ -1812,10 +1847,21 @@ footer {
     padding: 1rem;
   }
 
+  .form-group textarea {
+    height: 80px;
+  }
+
+  .form-group {
+    margin-bottom: 0.8rem;
+  }
+
+  .form-group label {
+    margin-bottom: 0.3rem;
+  }
+
   .form-group input,
   .form-group textarea {
-    padding: 0.8rem;
-    font-size: 0.9rem;
+    padding: 0.7rem;
   }
 
   .btn-submit {
