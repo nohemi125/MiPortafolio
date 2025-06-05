@@ -479,7 +479,7 @@ header {
 .carousel-track {
   display: flex;
   gap: 2rem;
-  animation: scroll 30s linear infinite;
+  animation: scroll 15s linear infinite;
   width: max-content;
 }
 
@@ -1691,12 +1691,56 @@ footer {
     width: 100vw;
     max-width: 100vw;
     padding: 4rem 1rem;
+    overflow-x: hidden;
+  }
+
+  .contact-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
   }
 
   .contact-container {
     grid-template-columns: 1fr;
     gap: 2rem;
     width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .info-item {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .redes-sociales {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .social-link {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
   }
 
   .certificate-modal-body {
@@ -1748,6 +1792,34 @@ footer {
   body {
     width: 100vw;
     max-width: 100vw;
+  }
+
+  .theme-toggle-floating {
+    bottom: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    z-index: 2000;
+  }
+
+  .theme-toggle-floating i {
+    font-size: 1.1rem;
+  }
+
+  /* Asegurar que el formulario de contacto se ajuste correctamente */
+  .contact-form {
+    padding: 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-submit {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
   }
 
   .container h3 {
