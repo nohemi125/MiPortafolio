@@ -10,109 +10,110 @@ const themeIcon = document.getElementById("theme-icon")
 // Datos de los proyectos
 const projectsData = {
   portal: {
-    title: "Academic Portal",
-    description: "An academic system for managing assignments.",
-    features: [
-      "Student and teacher registration.",
-      "Course enrollment system",
-      "Assignment submission and review",
-      "Enrollment assignment.",
+    titulo: "Portal Academico",
+    descripcion: "Un sistema academico para gestionar tareas.",
+    caracteristicas: [
+      "Registro de estudiantes y profesores.",
+      "Sistema de inscripcion de estudiantes.",
+      "Envio y revision de tareas.",
+      "Inscripcion de asignaturas.",
     ],
-    technologies: ["HTML", "CSS", "JavaScript", "Node.js", "MySql", "Express.js"],
+    tecnologias: ["HTML", "CSS", "JavaScript", "Node.js", "MySql", "Express.js"],
     github: "https://github.com/nohemi125/Ptoyecto.git",
-    demo: "#",
+    demo: "../landing-pag.html",
   },
   editor: {
-    title: "Text Editor",
-    description: "A text editor with simple yet functional features..",
-    features: [
-      "allows you to create a large number of words",
-      "allows you to search for a specific word and highlight it",
-      "It shows how many words are repeated and if there are none, it shows a message.",
+    titulo: "Editor de Texto",
+    descripcion: "Un editor de texto con caracteristicas simples pero funcionales",
+    caracteristicas: [
+      "te permite crear un gran numero de palabras",
+      "te permite buscar una palabra especifica y resaltarla",
+      "Muestra cuantas palabras se repiten y si no hay ninguna, muestra un mensaje.",
     ],
-    technologies: ["JavaScript", "CSS", "HTML", "MongoDB", "Express.js"],
+    tecnologias: ["JavaScript", "CSS", "HTML", "MongoDB", "Express.js"],
     github: "https://github.com/nohemi125/Editor-de-Texto.git",
-    demo: "#",
+    demo: "../landing-pag.html",
   },
-  music: {
-    title: "Music Player",
-    description: "An elegant music player with simple features yet an attractive design",
-    features: [
+  musica: {
+    titulo: "Reproductor de Musica",
+    descripcion: "Un reproductor de musica con caracteristicas simples pero atractivas",
+    caracteristicas: [
       "muestra las canciones por artista",
       "Registration and login",
       "Search for a specific artist",
       "Spotify API integration",
     ],
-    technologies: ["HTML", "CSS", "JavaScript", "API", "Node.js", "Express.js", "MongoDB"],
+    tecnologias: ["HTML", "CSS", "JavaScript", "API", "Node.js", "Express.js", "MongoDB"],
     github: "#",
-    demo: "#",
+    demo: "../landing-pag.html",
   },
 }
+
 
 // Datos de los certificados
 const certificatesData = {
   javascript: {
-    title: "JavaScript Fundamentals Certification",
-    courseName: "JavaScript Fundamentals",
-    provider: "WomakersCode",
-    date: "Completed: June 2025",
-    image: "./imagens/certificadoJS.jpg",
-    downloadUrl: "#",
-    verificationUrl: "/landing-page.html",
-    description:
-      "This certificate validates proficiency in modern JavaScript programming, including ES6+ features, DOM manipulation, and asynchronous programming concepts.",
+    titulo: "Fundamentos de JavaScript",
+    nombreCurso: "Fundamentos de JavaScript",
+    proveedor: "WomakersCode",
+    fecha: "Completado: Junio 2025",
+    imagen: "./imagens/certificadoJS.jpg",
+    descargarUrl: "#",
+    verificarUrl: "/landing-pag.html",
+    descripcion:
+      "Certificacion en programacion moderna en JavaScript, manipulacion de DOM, y conceptos de programacion asincrona.",
   },
   react: {
-    title: "React Development Certification",
-    courseName: "React Development Masterclass",
-    provider: "#",
-    date: "Completed: july 2024",
-    image: "/placeholder.svg?height=600&width=800&text=React+Certificate",
-    downloadUrl: "#",
-    verificationUrl: "#",
-    description:
-      "Advanced certification covering React hooks, context API, state management, and modern React development patterns.",
+    titulo: "Desarrollo con React",
+    nombreCurso: "Masterclass de Desarrollo React",
+    proveedor: "#",
+    fecha: "Completado: Julio 2024",
+    imagen: "/placeholder.svg?height=600&width=800&text=React+Certificate",
+    descargarUrl: "#",
+    verificarUrl: "#",
+    descripcion:
+      "Certificacion en React, context API, manejo de estado, y patrones de desarrollo modernos.",
   },
   database: {
-    title: "Database Design & SQL Certification",
-    courseName: "Database Design & SQL",
-    provider: "#",
-    date: "Completed: December 2024",
-    image: "/placeholder.svg?height=600&width=800&text=Database+Certificate",
-    downloadUrl: "#",
-    verificationUrl: "#",
-    description:
-      "Comprehensive certification in database design principles, SQL optimization, and database management systems.",
+    titulo: "Bases de Datos & SQL Certificacion",
+    nombreCurso: "Diseño de Bases de Datos & SQL",
+    proveedor: "#",
+    fecha: "Completado: Diciembre 2024",
+    imagen: "/placeholder.svg?height=600&width=800&text=Database+Certificate",
+    descargarUrl: "#",
+    verificarUrl: "#",
+    descripcion:
+      "Certificacion en bases de datos, optimizacion de SQL y sistemas de gestion de bases de datos.",
   },
   Figma: {
-    title: "FIGMA",
-    courseName: "TALLER-FIGMA",
-    provider: "desafio Latam",
-    date: "Completed: 25 february 2025",
-    image: "./imagens/desafioLatam.jpg",
-    downloadUrl: "#",
+    titulo: "FIGMA",
+    nombreCurso: "TALLER-FIGMA",
+    proveedor: "desafio Latam",
+    fecha: "Completado: 25 febrero 2025",
+    imagen: "./imagens/desafioLatam.jpg",
+    descargarUrl: "#",
   },
   nodejs: {
-    title: "Node.js & Express Certification",
-    courseName: "Backend Development with Node.js",
-    provider: "",
-    date: "Completed: October 2024",
-    image: "/placeholder.svg?height=600&width=800&text=NodeJS+Certificate",
-    downloadUrl: "#",
-    verificationUrl: "#",
-    description:
-      "Backend development certification covering Node.js, Express framework, RESTful APIs, and server-side programming.",
+    titulo: "Node.js & Express Certificación 2024",
+    nombreCurso: "Desarrollo Backend con Node.js",
+    proveedor: "desafio Latam",
+    fecha: "Completado: Octubre 2024",
+    imagen: "./imagens/desafioLatam.jpg",
+    descargarUrl: "#",
+    verificarUrl: "#",
+    descripcion:
+      "Certificación en desarrollo backend cubriendo Node.js, framework Express, APIs RESTful, y programación del lado del servidor.",
   },
   git: {
-    title: "Git & GitHub Mastery Certification",
-    courseName: "Version Control with Git",
-    provider: "GitHub",
-    date: "Completed: june 2025",
-    image: "./imagens/GitHubCurso.jpg",
-    downloadUrl: "#",
-    verificationUrl: "#",
-    description:
-      "Professional certification in Git version control, collaborative development workflows, and project management.",
+    titulo: "Certificación en Git & GitHub",
+    nombreCurso: "Control de Versiones con Git",
+    proveedor: "GitHub",
+    fecha: "Completado: Junio 2025",
+    imagen: "./imagens/GitHubCurso.jpg",
+    descargarUrl: "#",
+    verificarUrl: "#",
+    descripcion:
+      "Certificación en control de versiones con Git, flujos de trabajo colaborativos y gestión de proyectos.",
   },
 }
 
@@ -364,17 +365,17 @@ function openModal(projectKey) {
   const secondaryColor = currentTheme === "dark" ? "#a2d2ff" : "#c77dff"
 
   modalBody.innerHTML = `
-        <h2 style="color: ${accentColor}; margin-bottom: 1rem;">${project.title}</h2>
-        <p style="color: ${textColor}; margin-bottom: 2rem; line-height: 1.6;">${project.description}</p>
+        <h2 style="color: ${accentColor}; margin-bottom: 1rem;">${project.titulo}</h2>
+        <p style="color: ${textColor}; margin-bottom: 2rem; line-height: 1.6;">${project.descripcion}</p>
         
-        <h3 style="color: ${secondaryColor}; margin-bottom: 1rem;">Features:</h3>
+        <h3 style="color: ${secondaryColor}; margin-bottom: 1rem;">Características:</h3>
         <ul style="color: ${accentColor}; margin-bottom: 2rem; padding-left: 1.5rem;">
-            ${project.features.map((feature) => `<li style="margin-bottom: 0.5rem;">${feature}</li>`).join("")}
+            ${project.caracteristicas.map((feature) => `<li style="margin-bottom: 0.5rem;">${feature}</li>`).join("")}
         </ul>
         
-        <h3 style="color: ${secondaryColor}; margin-bottom: 1rem;">Technologies:</h3>
+        <h3 style="color: ${secondaryColor}; margin-bottom: 1rem;">Tecnologías:</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
-            ${project.technologies
+            ${project.tecnologias
               .map(
                 (tech) =>
                   `<span style="background: rgba(255,255,255,0.1); padding: 0.3rem 0.8rem; border-radius: 15px; color: ${textColor}; font-size: 0.9rem;">${tech}</span>`,
@@ -384,10 +385,10 @@ function openModal(projectKey) {
         
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
             <a href="${project.github}" style="background: #35007a; color: white; padding: 0.8rem 1.5rem; border-radius: 25px; text-decoration: none; transition: all 0.3s ease;">
-                <i class="fab fa-github"></i> View Code
+                <i class="fab fa-github"></i> Ver Código
             </a>
-            <a href="${project.demo}" style="background: transparent; color: ${accentColor}; padding: 0.8rem 1.5rem; border: 2px solid ${accentColor}; border-radius: 25px; text-decoration: none; transition: all 0.3s ease;">
-                <i class="fas fa-external-link-alt"></i> Live Demo
+            <a href="${project.demo}" style="background: transparent; color: ${accentColor}; padding: 0.8rem 1.5rem; border-radius: 25px; text-decoration: none; border: 2px solid ${accentColor}; transition: all 0.3s ease;">
+                <i class="fas fa-external-link-alt"></i> Ver Demo
             </a>
         </div>
     `
@@ -428,10 +429,10 @@ function openCertificateModal(certificateKey) {
   currentCertificate = certificate
 
   // Actualizar contenido del modal
-  document.getElementById("certificateTitle").textContent = certificate.title
-  document.getElementById("certificateCourseName").textContent = certificate.courseName
-  document.getElementById("certificateProvider").textContent = `Issued by: ${certificate.provider}`
-  document.getElementById("certificateDate").textContent = certificate.date
+  document.getElementById("certificateTitle").textContent = certificate.titulo
+  document.getElementById("certificateCourseName").textContent = certificate.nombreCurso
+  document.getElementById("certificateProvider").textContent = `Emitido por: ${certificate.proveedor}`
+  document.getElementById("certificateDate").textContent = certificate.fecha
 
   // Mostrar loading inicialmente
   const loadingElement = document.querySelector(".certificate-loading")
@@ -442,8 +443,8 @@ function openCertificateModal(certificateKey) {
 
   // Simular carga de imagen
   setTimeout(() => {
-    imageElement.src = certificate.image
-    imageElement.alt = certificate.title
+    imageElement.src = certificate.imagen
+    imageElement.alt = certificate.titulo
 
     imageElement.onload = () => {
       loadingElement.style.display = "none"
@@ -461,7 +462,7 @@ function openCertificateModal(certificateKey) {
     certificateModal.querySelector(".certificate-modal-content").style.transform = "scale(1)"
   }, 10)
 
-  console.log(`Certificate viewed: ${certificate.courseName}`)
+  console.log(`Certificate viewed: ${certificate.nombreCurso}`)
 }
 
 function closeCertificateModal() {
@@ -497,74 +498,75 @@ function handleContactForm(e) {
   e.preventDefault()
 
   const formData = new FormData(contactForm)
-  const data = Object.fromEntries(formData)
-
-  // Simular envío del formulario
   const submitBtn = contactForm.querySelector(".btn-submit")
   const originalText = submitBtn.textContent
 
-  submitBtn.textContent = "Sending..."
+  // Deshabilitar el botón y mostrar estado de carga
+  submitBtn.textContent = "Enviando..."
   submitBtn.disabled = true
 
-  setTimeout(() => {
-    submitBtn.textContent = "Message Sent!"
-    submitBtn.style.background = "linear-gradient(135deg, #28a745, #20c997)"
-
+  // Enviar el formulario a Formspree
+  fetch(contactForm.action, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      // Éxito
+      submitBtn.textContent = "¡Mensaje Enviado!"
+      submitBtn.style.background = "linear-gradient(135deg, #28a745, #20c997)"
+      contactForm.reset()
+      showNotification("¡Mensaje enviado con éxito! Te responderé pronto.", "success")
+    } else {
+      // Error
+      throw new Error('Error al enviar el mensaje')
+    }
+  })
+  .catch(error => {
+    // Mostrar error
+    submitBtn.textContent = "Error al Enviar"
+    submitBtn.style.background = "linear-gradient(135deg, #dc3545, #c82333)"
+    showNotification("Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.", "error")
+  })
+  .finally(() => {
+    // Restaurar el botón después de 3 segundos
     setTimeout(() => {
       submitBtn.textContent = originalText
       submitBtn.disabled = false
       submitBtn.style.background = "linear-gradient(135deg, var(--color-morado), var(--color-azul))"
-      contactForm.reset()
-
-      // Mostrar mensaje de éxito
-      showNotification("Message sent successfully! I'll get back to you soon.", "success")
-    }, 2000)
-  }, 1500)
+    }, 3000)
+  })
 }
 
-// Sistema de notificaciones
 function showNotification(message, type = "info") {
+  // Crear elemento de notificación
   const notification = document.createElement("div")
-  notification.className = `notification notification-${type}`
+  notification.className = `notification ${type}`
+  notification.innerHTML = `
+    <div class="notification-content">
+      <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
+      <span>${message}</span>
+    </div>
+  `
 
-  const colors = {
-    info: "#17a2b8",
-    success: "#28a745",
-    error: "#dc3545",
-    warning: "#ffc107",
-  }
-
-  notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 20px;
-        background: ${colors[type] || colors.info};
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 10px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        z-index: 4000;
-        transform: translateX(400px);
-        transition: transform 0.3s ease;
-        max-width: 300px;
-        font-weight: 500;
-    `
-
-  notification.textContent = message
+  // Agregar al DOM
   document.body.appendChild(notification)
 
+  // Mostrar con animación
   setTimeout(() => {
-    notification.style.transform = "translateX(0)"
+    notification.classList.add("show")
   }, 100)
 
+  // Remover después de 5 segundos
   setTimeout(() => {
-    notification.style.transform = "translateX(400px)"
+    notification.classList.remove("show")
     setTimeout(() => {
-      if (notification.parentNode) {
-        document.body.removeChild(notification)
-      }
+      notification.remove()
     }, 300)
-  }, 4000)
+  }, 5000)
 }
 
 // Función para manejar errores de carga de imágenes
