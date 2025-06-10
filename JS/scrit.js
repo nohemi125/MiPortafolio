@@ -286,8 +286,13 @@ function setupScrollAnimations() {
 // Efecto de escritura
 function setupTypingEffect() {
   const textElement = document.getElementById("texto-escritura")
-  const texts = ["Hello World! I am Nohemi", "Software Developer", "UI/UX Designer", "Creative Problem Solver"]
-
+  const texts = [
+    "Soy Nohemi",
+    "Compilo... luego existo",
+    "Funciona en mi máquina ",
+    "Mi superpoder: encontrar errores a las 3AM",
+    "Lo hice funcionar, no preguntes cómo "
+  ];
   let textIndex = 0
   let charIndex = 0
   let isDeleting = false
