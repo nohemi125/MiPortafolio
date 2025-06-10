@@ -496,10 +496,16 @@ function downloadCertificate() {
 // Formulario de contacto
 function handleContactForm(e) {
   e.preventDefault()
+  console.log('Formulario enviado')
 
   const formData = new FormData(contactForm)
   const submitBtn = contactForm.querySelector(".btn-submit")
   const originalText = submitBtn.textContent
+
+  // Log de los datos del formulario
+  for (let pair of formData.entries()) {
+    console.log(pair[0] + ': ' + pair[1])
+  }
 
   // Deshabilitar el botón y mostrar estado de carga
   submitBtn.textContent = "Enviando..."
@@ -511,9 +517,11 @@ function handleContactForm(e) {
     body: formData,
     headers: {
       'Accept': 'application/json'
-    }
+    },
+    mode: 'cors' // Asegurar que funcione en todos los dispositivos
   })
   .then(response => {
+    console.log('Respuesta del servidor:', response.status)
     if (response.ok) {
       // Éxito
       submitBtn.textContent = "¡Mensaje Enviado!"
@@ -522,10 +530,11 @@ function handleContactForm(e) {
       showNotification("¡Mensaje enviado con éxito! Te responderé pronto.", "success")
     } else {
       // Error
-      throw new Error('Error al enviar el mensaje')
+      throw new Error('Error al enviar el mensaje: ' + response.status)
     }
   })
   .catch(error => {
+    console.error('Error en el envío:', error)
     // Mostrar error
     submitBtn.textContent = "Error al Enviar"
     submitBtn.style.background = "linear-gradient(135deg, #dc3545, #c82333)"
