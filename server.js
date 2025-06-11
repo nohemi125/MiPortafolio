@@ -1,15 +1,18 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
-
 const app = express();
-const PORT = 3000;
+require('dotenv').config();
 
-// Middleware
-app.use(cors());
+// Configuración de CORS
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(__dirname));
 
 // Ruta para procesar el formulario
 app.post('/enviar', async (req, res) => {
@@ -33,8 +36,10 @@ app.post('/enviar', async (req, res) => {
       port: 587,
       secure: false,
       auth: {
-        user: 'nohemimorelounal@gmail.com',           
-        pass: 'teqzbcrodixrjpbb',    
+       
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+        
       },
       tls: {
         rejectUnauthorized: false
@@ -75,6 +80,8 @@ app.post('/enviar', async (req, res) => {
 });
 
 
+// Puerto para Render
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });

@@ -533,8 +533,11 @@ function handleContactForm(e) {
   submitBtn.textContent = "Enviando..."
   submitBtn.disabled = true
 
-  // Enviar el formulario al servidor Node.js
-  fetch('http://localhost:3000/enviar', {
+  // URL del servidor en Render
+  const serverUrl = 'https://miportafolio.onrender.com' // Reemplaza esto con tu URL real de Render
+
+  // Enviar el formulario al servidor
+  fetch(`${serverUrl}/enviar`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -561,7 +564,7 @@ function handleContactForm(e) {
     // Mostrar error
     submitBtn.textContent = "Error al Enviar"
     submitBtn.style.background = "linear-gradient(135deg, #dc3545, #c82333)"
-    showNotification(error.message || "Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.", "error")
+    showNotification("No se pudo enviar el mensaje. Por favor, intenta más tarde.", "error")
   })
   .finally(() => {
     // Restaurar el botón después de 3 segundos
