@@ -155,7 +155,53 @@ function setupEventListeners() {
   })
 
   // Formulario de contacto
-  contactForm.addEventListener("submit", handleContactForm)
+  if (contactForm) {
+    contactForm.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      const submitBtn = this.querySelector('.btn-submit');
+      const originalText = submitBtn.textContent;
+      
+      try {
+        submitBtn.textContent = "Enviando...";
+        submitBtn.disabled = true;
+        
+        const response = await fetch('http://localhost:3000/enviar', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name, email, message })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          submitBtn.textContent = "¡Mensaje Enviado!";
+          submitBtn.style.background = "linear-gradient(135deg, #28a745, #20c997)";
+          contactForm.reset();
+          showNotification("¡Mensaje enviado con éxito! Te responderé pronto.", "success");
+        } else {
+          throw new Error(data.message || 'Error al enviar el mensaje');
+        }
+      } catch (error) {
+        console.error('Error en el envío:', error);
+        submitBtn.textContent = "Error al Enviar";
+        submitBtn.style.background = "linear-gradient(135deg, #dc3545, #c82333)";
+        showNotification("No se pudo enviar el mensaje. Por favor, intenta más tarde.", "error");
+      } finally {
+        setTimeout(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+          submitBtn.style.background = "linear-gradient(135deg, var(--color-morado), var(--color-azul))";
+        }, 3000);
+      }
+    });
+  }
 
   // Scroll para header transparente
   window.addEventListener("scroll", handleHeaderScroll)
@@ -506,37 +552,6 @@ function downloadCertificate() {
 
   console.log(`Certificate download initiated: ${currentCertificate.courseName}`)
 }
-
-// Manejo del formulario de contacto
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    try {
-        const response = await fetch('https://miportafolio.onrender.com/enviar', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name, email, message })
-        });
-        
-        const data = await response.json();
-        
-        if (response.ok) {
-            alert('¡Mensaje enviado con éxito!');
-            document.getElementById('contactForm').reset();
-        } else {
-            throw new Error(data.message || 'Error al enviar el mensaje');
-        }
-    } catch (error) {
-        console.error('Error en el envío:', error);
-        alert('No se pudo enviar el mensaje. Por favor, intenta más tarde.');
-    }
-});
 
 function showNotification(message, type = "info") {
   // Crear elemento de notificación

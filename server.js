@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
@@ -5,7 +6,14 @@ const path = require('path');
 const app = express();
 
 // Configuración de CORS más permisiva
-app.use(cors());
+const corsOptions = {
+  origin: ['http://127.0.0.1:5500', 'http://localhost:5500', 'https://miportafolio-3a6l.onrender.com', 'https://miportafolio.onrender.com'],
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 
 // Middleware para parsear JSON y URL-encoded
 app.use(express.json());
@@ -18,6 +26,7 @@ app.use(express.static(path.join(__dirname)));
 console.log('Verificando variables de entorno...');
 if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
   console.error('Error: Las variables de entorno EMAIL_USER y EMAIL_PASS son requeridas');
+  process.exit(1); // Terminar el proceso si faltan las variables
 }
 
 // Configuración del transporter de nodemailer
@@ -26,6 +35,9 @@ const transporter = nodemailer.createTransport({
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
+  },
+  tls: {
+    rejectUnauthorized: false // Ignorar errores de certificado
   }
 });
 
@@ -46,9 +58,10 @@ app.get('/', (req, res) => {
 // Ruta para enviar correo
 app.post('/enviar', async (req, res) => {
   // Configurar headers CORS específicamente para esta ruta
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'POST');
+  res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
+  res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Credentials', 'true');
 
   try {
     const { name, email, message } = req.body;
@@ -64,13 +77,21 @@ app.post('/enviar', async (req, res) => {
 
     // Configurar el correo
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: `"Formulario de Contacto" <${process.env.EMAIL_USER}>`,
+      replyTo: email, // Esto permite que cuando respondas, el correo vaya al remitente original
       to: process.env.EMAIL_USER,
       subject: `Nuevo mensaje de contacto de ${name}`,
       text: `
         Nombre: ${name}
         Email: ${email}
         Mensaje: ${message}
+      `,
+      html: `
+        <h3>Nuevo mensaje de contacto</h3>
+        <p><strong>Nombre:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Mensaje:</strong></p>
+        <p>${message}</p>
       `
     };
 
@@ -94,7 +115,7 @@ app.post('/enviar', async (req, res) => {
 });
 
 // Ruta para manejar solicitudes OPTIONS (preflight)
-app.options('*', cors());
+app.options('*', cors(corsOptions));
 
 // Manejo de errores
 app.use((err, req, res, next) => {
