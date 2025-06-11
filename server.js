@@ -4,13 +4,10 @@ const cors = require('cors');
 const path = require('path');
 const app = express();
 
-// Configuración de CORS
-app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type']
-}));
+// Configuración de CORS más permisiva
+app.use(cors());
 
+// Middleware para parsear JSON y URL-encoded
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -48,6 +45,11 @@ app.get('/', (req, res) => {
 
 // Ruta para enviar correo
 app.post('/enviar', async (req, res) => {
+  // Configurar headers CORS específicamente para esta ruta
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'POST');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+
   try {
     const { name, email, message } = req.body;
     console.log('Recibida solicitud de envío:', { name, email, message });
@@ -90,6 +92,9 @@ app.post('/enviar', async (req, res) => {
     });
   }
 });
+
+// Ruta para manejar solicitudes OPTIONS (preflight)
+app.options('*', cors());
 
 // Manejo de errores
 app.use((err, req, res, next) => {

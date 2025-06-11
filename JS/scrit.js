@@ -507,74 +507,36 @@ function downloadCertificate() {
   console.log(`Certificate download initiated: ${currentCertificate.courseName}`)
 }
 
-// Formulario de contacto
-function handleContactForm(e) {
-  e.preventDefault()
-  console.log('Formulario enviado')
-
-  const formData = new FormData(contactForm)
-  const submitBtn = contactForm.querySelector(".btn-submit")
-  const originalText = submitBtn.textContent
-
-  // Convertir FormData a objeto
-  const data = {
-    name: formData.get('name'),
-    email: formData.get('email'),
-    message: formData.get('message')
-  }
-
-  // Validación básica en el frontend
-  if (!data.name || !data.email || !data.message) {
-    showNotification("Por favor, completa todos los campos del formulario.", "error")
-    return
-  }
-
-  // Deshabilitar el botón y mostrar estado de carga
-  submitBtn.textContent = "Enviando..."
-  submitBtn.disabled = true
-
-  // URL del servidor en Render
-  const serverUrl = 'https://miportafolio.onrender.com' // Reemplaza esto con tu URL real de Render
-
-  // Enviar el formulario al servidor
-  fetch(`${serverUrl}/enviar`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data)
-  })
-  .then(async response => {
-    console.log('Respuesta del servidor:', response.status)
-    const data = await response.json()
+// Manejo del formulario de contacto
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
     
-    if (response.ok) {
-      // Éxito
-      submitBtn.textContent = "¡Mensaje Enviado!"
-      submitBtn.style.background = "linear-gradient(135deg, #28a745, #20c997)"
-      contactForm.reset()
-      showNotification("¡Mensaje enviado con éxito! Te responderé pronto.", "success")
-    } else {
-      // Error del servidor
-      throw new Error(data.message || 'Error al enviar el mensaje')
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    try {
+        const response = await fetch('https://miportafolio.onrender.com/enviar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, email, message })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+            alert('¡Mensaje enviado con éxito!');
+            document.getElementById('contactForm').reset();
+        } else {
+            throw new Error(data.message || 'Error al enviar el mensaje');
+        }
+    } catch (error) {
+        console.error('Error en el envío:', error);
+        alert('No se pudo enviar el mensaje. Por favor, intenta más tarde.');
     }
-  })
-  .catch(error => {
-    console.error('Error en el envío:', error)
-    // Mostrar error
-    submitBtn.textContent = "Error al Enviar"
-    submitBtn.style.background = "linear-gradient(135deg, #dc3545, #c82333)"
-    showNotification("No se pudo enviar el mensaje. Por favor, intenta más tarde.", "error")
-  })
-  .finally(() => {
-    // Restaurar el botón después de 3 segundos
-    setTimeout(() => {
-      submitBtn.textContent = originalText
-      submitBtn.disabled = false
-      submitBtn.style.background = "linear-gradient(135deg, var(--color-morado), var(--color-azul))"
-    }, 3000)
-  })
-}
+});
 
 function showNotification(message, type = "info") {
   // Crear elemento de notificación
