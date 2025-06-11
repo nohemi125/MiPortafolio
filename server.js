@@ -1,8 +1,8 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
+const path = require('path');
 const app = express();
-require('dotenv').config();
 
 // Configuración de CORS
 app.use(cors({
@@ -14,74 +14,78 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Ruta para procesar el formulario
-app.post('/enviar', async (req, res) => {
-  console.log('Recibida solicitud de envío:', req.body);
-  
-  const { name, email, message } = req.body;
+// Servir archivos estáticos
+app.use(express.static(path.join(__dirname)));
 
-  // Validación de datos
-  if (!name || !email || !message) {
-    console.error('Datos incompletos:', { name, email, message });
-    return res.status(400).json({ 
-      ok: false, 
-      message: 'Por favor, completa todos los campos' 
-    });
+// Configuración del transporter de nodemailer
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   }
+});
 
+// Ruta principal - servir index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Ruta para enviar correo
+app.post('/enviar', async (req, res) => {
   try {
-    console.log('Configurando transporter...');
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure: false,
-      auth: {
-       
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-        
-      },
-      tls: {
-        rejectUnauthorized: false
-      }
-    });
+    const { name, email, message } = req.body;
+    console.log('Recibida solicitud de envío:', req.body);
 
-    // Verificar la conexión
-    await transporter.verify();
-    console.log('Conexión con Gmail verificada correctamente');
+    if (!name || !email || !message) {
+      return res.status(400).json({ 
+        status: 'error', 
+        message: 'Todos los campos son requeridos' 
+      });
+    }
 
+    // Configurar el correo
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: `Nuevo mensaje de contacto de ${name}`,
+      text: `
+        Nombre: ${name}
+        Email: ${email}
+        Mensaje: ${message}
+      `
+    };
+
+    // Enviar el correo
     console.log('Enviando correo...');
-    const info = await transporter.sendMail({
-      from: `"${name}" <${email}>`,
-      to: 'nohemimorelounal@gmail.com', 
-      subject: 'Nuevo mensaje desde el form de portafolio',
-      html: `
-        <h2>Nuevo mensaje</h2>
-        <p><strong>Nombre:</strong> ${name}</p>
-        <p><strong>Correo:</strong> ${email}</p>
-        <p><strong>Mensaje:</strong> ${message}</p>
-      `,
-    });
-
+    const info = await transporter.sendMail(mailOptions);
     console.log('Correo enviado:', info.messageId);
+
     res.status(200).json({ 
-      ok: true, 
-      message: 'Mensaje enviado con éxito',
-      messageId: info.messageId 
+      status: 'success', 
+      message: 'Correo enviado exitosamente' 
     });
   } catch (error) {
-    console.error('Error detallado al enviar:', error);
+    console.error('Error al enviar correo:', error);
     res.status(500).json({ 
-      ok: false, 
-      message: 'Error al enviar el mensaje',
+      status: 'error', 
+      message: 'Error al enviar el correo',
       error: error.message 
     });
   }
 });
 
+// Manejo de errores
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ 
+    status: 'error', 
+    message: 'Algo salió mal en el servidor' 
+  });
+});
 
 // Puerto para Render
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Servidor escuchando en http://localhost:${PORT}`);
+  console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
