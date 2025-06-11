@@ -289,9 +289,8 @@ function setupTypingEffect() {
   const textElement = document.getElementById("texto-escritura")
   const texts = [
     "Soy Nohemi",
-    "Compilo... luego existo",
     "Funciona en mi máquina ",
-    "Mi superpoder: encontrar errores a las 3AM",
+    "Encuentro errores a las 3AM",
     "Lo hice funcionar, no preguntes cómo "
   ];
   let textIndex = 0
@@ -301,19 +300,20 @@ function setupTypingEffect() {
 
   function typeWriter() {
     const currentText = texts[textIndex]
+    const isMobile = window.innerWidth <= 768
 
     if (isDeleting) {
       textElement.innerHTML = `
-                <span class="texto-uno">Hello World!</span> 
-                <span class="texto-dos">${currentText.substring(0, charIndex - 1)}</span>
-            `
+        <span class="texto-uno">¡Hola Mundo!</span> 
+        <span class="texto-dos">${currentText.substring(0, charIndex - 1)}</span>
+      `
       charIndex--
       typeSpeed = 50
     } else {
       textElement.innerHTML = `
-                <span class="texto-uno">Hello World!</span> 
-                <span class="texto-dos">${currentText.substring(0, charIndex + 1)}</span>
-            `
+        <span class="texto-uno">¡Hola Mundo!</span> 
+        <span class="texto-dos">${currentText.substring(0, charIndex + 1)}</span>
+      `
       charIndex++
       typeSpeed = 100
     }
@@ -332,6 +332,20 @@ function setupTypingEffect() {
 
   // Iniciar después de un pequeño delay
   setTimeout(typeWriter, 1000)
+
+  // Manejar cambios de tamaño de ventana
+  let resizeTimeout
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout)
+    resizeTimeout = setTimeout(() => {
+      const isMobile = window.innerWidth <= 768
+      if (isMobile) {
+        textElement.style.textAlign = 'center'
+      } else {
+        textElement.style.textAlign = 'left'
+      }
+    }, 250)
+  })
 }
 
 // Scroll suave para navegación
@@ -502,26 +516,35 @@ function handleContactForm(e) {
   const submitBtn = contactForm.querySelector(".btn-submit")
   const originalText = submitBtn.textContent
 
-  // Log de los datos del formulario
-  for (let pair of formData.entries()) {
-    console.log(pair[0] + ': ' + pair[1])
+  // Convertir FormData a objeto
+  const data = {
+    name: formData.get('name'),
+    email: formData.get('email'),
+    message: formData.get('message')
+  }
+
+  // Validación básica en el frontend
+  if (!data.name || !data.email || !data.message) {
+    showNotification("Por favor, completa todos los campos del formulario.", "error")
+    return
   }
 
   // Deshabilitar el botón y mostrar estado de carga
   submitBtn.textContent = "Enviando..."
   submitBtn.disabled = true
 
-  // Enviar el formulario a Formspree
-  fetch(contactForm.action, {
+  // Enviar el formulario al servidor Node.js
+  fetch('http://localhost:3000/enviar', {
     method: 'POST',
-    body: formData,
     headers: {
-      'Accept': 'application/json'
+      'Content-Type': 'application/json',
     },
-    mode: 'cors' // Asegurar que funcione en todos los dispositivos
+    body: JSON.stringify(data)
   })
-  .then(response => {
+  .then(async response => {
     console.log('Respuesta del servidor:', response.status)
+    const data = await response.json()
+    
     if (response.ok) {
       // Éxito
       submitBtn.textContent = "¡Mensaje Enviado!"
@@ -529,8 +552,8 @@ function handleContactForm(e) {
       contactForm.reset()
       showNotification("¡Mensaje enviado con éxito! Te responderé pronto.", "success")
     } else {
-      // Error
-      throw new Error('Error al enviar el mensaje: ' + response.status)
+      // Error del servidor
+      throw new Error(data.message || 'Error al enviar el mensaje')
     }
   })
   .catch(error => {
@@ -538,7 +561,7 @@ function handleContactForm(e) {
     // Mostrar error
     submitBtn.textContent = "Error al Enviar"
     submitBtn.style.background = "linear-gradient(135deg, #dc3545, #c82333)"
-    showNotification("Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.", "error")
+    showNotification(error.message || "Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.", "error")
   })
   .finally(() => {
     // Restaurar el botón después de 3 segundos

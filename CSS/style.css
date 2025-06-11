@@ -205,19 +205,29 @@ header {
 }
 
 #texto-escritura {
-  overflow: hidden;
-  border-right: 3px solid var(--color-morado);
-  white-space: nowrap;
-  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  overflow: visible;
+  white-space: normal;
+  border-right: none;
+  animation: none;
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+.texto-uno {
+  color: var(--color-morado);
+  font-weight: 600;
+  display: block;
+}
+
+.texto-dos {
+  color: var(--color-azul);
+  font-weight: 600;
+  display: block;
+  min-height: 1.4em;
 }
 
 @keyframes blink-caret {
@@ -228,16 +238,6 @@ header {
   50% {
     border-color: var(--color-morado);
   }
-}
-
-.texto-uno {
-  color: var(--color-morado);
-  font-weight: 600;
-}
-
-.texto-dos {
-  color: var(--color-azul);
-  font-weight: 600;
 }
 
 /* Avatar */
@@ -926,10 +926,20 @@ header {
 }
 
 .contact-content > p {
-  font-size: 1.2rem;
-  color: var(--color-azul);
-  margin-bottom: 3rem;
-  transition: var(--transition);
+  color: var(--text-secondary);
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.contact-content > p:first-of-type {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: var(--color-morado);
+}
+
+.contact-content > p:last-of-type {
+  margin-bottom: 6rem;
 }
 
 [data-theme="dark"] .contact-content > p {
@@ -1820,6 +1830,24 @@ footer {
     width: 100%;
     max-width: 100%;
   }
+
+  #texto-escritura {
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    text-align: center;
+  }
+
+  .contact-content > p {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .contact-content > p:first-of-type {
+    margin-top: 0.4rem;
+  }
+  
+  .contact-content > p:last-of-type {
+    margin-bottom: 2.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1921,6 +1949,10 @@ footer {
   .contact-info {
     width: 100%;
     max-width: 100%;
+  }
+
+  #texto-escritura {
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
   }
 }
 
