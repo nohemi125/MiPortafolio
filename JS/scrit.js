@@ -22,31 +22,48 @@ const projectsData = {
     github: "https://github.com/nohemi125/Ptoyecto.git",
     demo: "../landing-pag.html",
   },
-  editor: {
-    titulo: "Editor de Texto",
-    descripcion: "Un editor de texto con caracteristicas simples pero funcionales",
-    caracteristicas: [
-      "te permite crear un gran numero de palabras",
-      "te permite buscar una palabra especifica y resaltarla",
-      "Muestra cuantas palabras se repiten y si no hay ninguna, muestra un mensaje.",
-    ],
-    tecnologias: ["JavaScript", "CSS", "HTML", "MongoDB", "Express.js"],
-    github: "https://github.com/nohemi125/Editor-de-Texto.git",
-    demo: "../landing-pag.html",
-  },
-  musica: {
+  music: {
     titulo: "Reproductor de Musica",
     descripcion: "Un reproductor de musica con caracteristicas simples pero atractivas",
     caracteristicas: [
       "muestra las canciones por artista",
-      "Registration and login",
-      "Search for a specific artist",
-      "Spotify API integration",
+      "Registro y incio de sesion ",
+      "busqueda de cancion y artista ",
+      "integracion de API Tunes",
+      "Crear lista de reproducion y agregar cancion favorita"
     ],
     tecnologias: ["HTML", "CSS", "JavaScript", "API", "Node.js", "Express.js", "MongoDB"],
     github: "#",
-    demo: "../landing-pag.html",
+    demo: "https://nohemi125.github.io/Reproductor-de-musica/",
   },
+  countries: {
+    titulo: "Buscador de Países",
+    descripcion: "Proyecto web interactivo que permite buscar información de cualquier país y mostrar el clima actual en su capital.",
+    caracteristicas: [
+      "Buscar país por nombre",
+      "Mostrar datos como: bandera, región, población, capital, idiomas",
+      "Mostrar clima actual (temperatura, clima, sensación térmica)",
+      "Cambiar color de fondo dinámicamente según el clima",
+      "Diseño responsive para móviles y pantallas pequeñas"
+    ],
+    tecnologias: ["HTML5", "CSS3", "JavaScript", "REST Countries API", "OpenWeatherMap API"],
+    github: "https://github.com/nohemi125/BuscadorPaises",
+    demo: "https://nohemi125.github.io/BuscadorPaises/",
+  },
+  "editor-text": {
+    titulo: "Editor de Texto Traductor",
+    descripcion: "Editor de texto interactivo con herramientas de edición, traducción automática y exportación.",
+    caracteristicas: [
+      "Buscador de texto dentro del contenido escrito",
+      "Traducción automática usando la API de MyMemory",
+      "Estilos: negrita, cursiva, cambio de tamaño de letra",
+      "Exportar como archivo PDF",
+      "Resalta la palabra buscada en el texto"
+    ],
+    tecnologias: ["HTML", "CSS", "JavaScript", "MyMemory API", "jsPDF"],
+    github: "#",
+    demo: "landing-pag.html",
+  }
 }
 
 

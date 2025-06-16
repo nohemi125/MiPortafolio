@@ -31,6 +31,7 @@ Este es un proyecto personal donde muestro mis habilidades en desarrollo web. Cu
 - ✅ Enlaces a proyectos, redes sociales y más
 
 ---
+
 ## 🌐 Despliegue en Render
 
 Este portafolio está desplegado en la plataforma Render. Puedes verlo en línea aquí:
