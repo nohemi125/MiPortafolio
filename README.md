@@ -17,7 +17,7 @@ Este es un proyecto personal donde muestro mis habilidades en desarrollo web. Cu
 ## 📷 Vista previa
 
 ### 💻 Diseño general
-![Vista previa del portafolio](imagenes/image.png)
+![Vista previa del portafolio](/imagens/image.png)
 
 ---
 
@@ -31,10 +31,12 @@ Este es un proyecto personal donde muestro mis habilidades en desarrollo web. Cu
 - ✅ Enlaces a proyectos, redes sociales y más
 
 ---
-🌐 Despliegue en Render
+## 🌐 Despliegue en Render
+
 Este portafolio está desplegado en la plataforma Render. Puedes verlo en línea aquí:
 
 🔗 https://miportafolio-3a6l.onrender.com
+
 ---
 
 ## 🛠️ Instalación local
