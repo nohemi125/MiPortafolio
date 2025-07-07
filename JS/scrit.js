@@ -50,6 +50,23 @@ const projectsData = {
     github: "https://github.com/nohemi125/BuscadorPaises",
     demo: "https://nohemi125.github.io/BuscadorPaises/",
   },
+
+  gallery: {
+    titulo: "Galería de dibujos",
+    descripcion: "Mi galería de dibujo personal, donde muestro el proceso que he tenido como artista autodidacta. Aquí se ve la evolución de mis habilidades, desde mis primeros trazos hasta trabajos más recientes.",
+    caracteristicas: [
+      "Visualización de dibujos en tarjetas organizadas por etapa",
+      "Modal que muestra la imagen en tamaño completo al hacer clic",
+      "Diseño artístico y estético que refleja mi estilo personal",
+      "Fuentes personalizadas para los títulos y textos",
+      "Diseño responsivo para adaptarse a móviles y pantallas pequeñas"
+    ],
+    tecnologias: ["React", "Vite", "HTML5", "CSS3", "JavaScript"],
+    github: "https://github.com/nohemi125/galeria-dibujos",
+    demo: "https://galeria-dibujos.onrender.com/",
+  },
+  
+
   "editor-text": {
     titulo: "Editor de Texto Traductor",
     descripcion: "Editor de texto interactivo con herramientas de edición, traducción automática y exportación.",
