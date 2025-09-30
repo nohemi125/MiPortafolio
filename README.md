@@ -1,49 +1,39 @@
-# 🎨 Mi Portafolio Web
+# <i class="fa-solid fa-palette"></i> Mi Portafolio Web
 
-Este es un proyecto personal donde muestro mis habilidades en desarrollo web. Cuenta con una interfaz moderna, animaciones suaves y un formulario de contacto funcional que permite enviar mensajes por correo. También se incluyen enlaces a mis redes sociales y proyectos destacados.
-
----
-
-## 🚀 Tecnologías usadas
-
-- 🌐 HTML, CSS y JavaScript
-- ⚙️ Node.js con Express (backend)
-- 📧 Nodemailer (para envío de correos)
-- ☁️ Render (para despliegue)
-- 📦 Git y GitHub (control de versiones)
+Este es un proyecto personal donde muestro mis habilidades en desarrollo web. 
+Cuenta con una interfaz moderna, animaciones suaves y un formulario de contacto funcional.
 
 ---
 
-## 📷 Vista previa
+## <i class="fa-solid fa-rocket"></i> Tecnologías usadas
 
-### 💻 Diseño general
+- <i class="fa-solid fa-globe"></i> HTML, CSS y JavaScript  
+- <i class="fa-solid fa-gears"></i> Node.js con Express (backend)  
+- <i class="fa-solid fa-envelope"></i> Nodemailer (para envío de correos)  
+- <i class="fa-solid fa-cloud"></i> Render (para despliegue)  
+- <i class="fa-brands fa-git-alt"></i> Git y GitHub (control de versiones)  
+
+---
+
+## <i class="fa-solid fa-camera"></i> Vista previa
+
+### <i class="fa-solid fa-laptop-code"></i> Diseño general
 ![Vista previa del portafolio](/imagens/image.png)
 
 ---
 
+## <i class="fa-solid fa-star"></i> Características
 
-## ✨ Características
-
-- ✅ Diseño responsivo para todos los dispositivos
-- ✅ Formulario de contacto funcional
-- ✅ Envío de correos usando Nodemailer
-- ✅ Animaciones suaves con CSS
-- ✅ Enlaces a proyectos, redes sociales y más
-
----
-
-## 🌐 Despliegue en Render
-
-Este portafolio está desplegado en la plataforma Render. Puedes verlo en línea aquí:
-
-🔗 https://miportafolio-3a6l.onrender.com
+- Diseño responsivo para todos los dispositivos  
+- Formulario de contacto funcional  
+- Envío de correos usando Nodemailer  
+- Animaciones suaves con CSS  
+- Enlaces a proyectos, redes sociales y más  
 
 ---
 
-## 🛠️ Instalación local
+## <i class="fa-solid fa-cloud-arrow-up"></i> Despliegue en Render
 
-```bash
-git clone https://github.com/nohemi125/MiPortafolio.git
-cd MiPortafolio
-npm install
-npm start
+🔗 https://miportafolio-3a6l.onrender.com  
+
+---
