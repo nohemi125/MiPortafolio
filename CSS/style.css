@@ -55,9 +55,25 @@ html {
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: "titulo";
+  src: url("../imagens/tipografia/h3.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+ h2, h3 {
+  font-family: "Fredoka One", sans-serif;
+}
+
+body, p ,h1{
+ font-family: "Quicksand", sans-serif;
+  font-weight: 900;
+}
+
+
 /* Estilos generales */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
   line-height: 1.6;
   transition: var(--transition);
@@ -195,7 +211,7 @@ header {
   color: var(--color-blanco);
   line-height: 1.1;
   text-shadow: 0px 0px 20px rgba(162, 210, 255, 0.5);
-  font-weight: 700;
+  font-weight: 200;
   transition: var(--transition);
 }
 
@@ -594,7 +610,7 @@ header {
 
 .card h3 {
   font-size: 1.5rem;
-  color: var(--text-primary);
+  color: var(  --color-morado-oscuro);
   margin-bottom: 1rem;
   font-weight: 600;
   transition: var(--transition);
@@ -794,7 +810,7 @@ header {
 
 .course-content h3 {
   font-size: 1.3rem;
-  color: var(--text-primary);
+  color: var(--color-morado-oscuro);
   margin-bottom: 0.5rem;
   font-weight: 600;
   transition: var(--transition);
@@ -1178,11 +1194,12 @@ header {
 
 .modal-content {
   background: linear-gradient(135deg, #560bad, #480ca8);
-  margin: 5% auto;
-  padding: 2rem;
+  margin: 2% auto;
+  padding: 1.5rem;
   border-radius: 20px;
-  width: 90%;
-  max-width: 600px;
+  width: 130%;
+  max-width: 700px;
+
   position: relative;
   animation: modalSlideIn 0.3s ease;
   transition: var(--transition);
@@ -1242,7 +1259,7 @@ header {
 
 .certificate-modal-content {
   background: linear-gradient(135deg, #560bad, #480ca8);
-  margin: 2% auto;
+  margin: 1% auto;
   padding: 0;
   border-radius: 20px;
   width: 95%;
@@ -1311,8 +1328,8 @@ header {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 2rem;
-  padding: 2rem;
-  min-height: 500px;
+  padding: 1rem;
+  min-height: 400px;
 }
 
 .certificate-image-container {
@@ -1335,7 +1352,7 @@ header {
 .certificate-image-container img {
   width: 100%;
   height: auto;
-  max-height: 600px;
+  max-height: 700px;
   object-fit: contain;
   border-radius: 10px;
   transition: var(--transition);
