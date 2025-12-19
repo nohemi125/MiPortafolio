@@ -66,6 +66,22 @@ const projectsData = {
     demo: "https://galeria-dibujos.onrender.com/",
   },
   
+  library: {
+    titulo: "Sistema de Gestión de Biblioteca",
+    descripcion: "Proyecto web para administrar préstamos de libros en una biblioteca, permitiendo el control de miembros, libros, préstamos, devoluciones y multas.",    
+    caracteristicas: [
+      "Gestión de miembros y libros",
+      "Registro de préstamos y devoluciones",
+      "Cálculo automático de multas por retraso",
+      "Interfaz intuitiva para facilitar la administración",
+      "personalizacion del sistema segun las necesidades de la biblioteca",
+      "envio de notificaciones por email y whatsapp",
+    ],
+    tecnologias: ["HTML5", "CSS3", "JavaScript", "Node.js", "Express.js", "Mysql", "bootstrap"],
+    github: "#",
+    demo: "landing-pag.html",
+  },
+
 
   "editor-text": {
     titulo: "Editor de Texto Traductor",
